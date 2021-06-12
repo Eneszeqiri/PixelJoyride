@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public GameObject replay;
     Rigidbody2D body;
     public bool gameOver = false;
     float score = 0;
@@ -49,7 +50,7 @@ public class Player : MonoBehaviour
     {
         if (gameOver)
         {
-            
+            replay.SetActive(true);
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("Clicked");

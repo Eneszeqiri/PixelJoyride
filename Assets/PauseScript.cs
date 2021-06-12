@@ -47,4 +47,9 @@ public class PauseScript : MonoBehaviour
         Time.timeScale = 1f;
         
     }
+
+    public void restart()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 }
