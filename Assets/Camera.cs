@@ -18,16 +18,33 @@ public class Camera : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("ChosenScene") == 1)
             {
-                Background2.GetComponent<SpriteRenderer>().enabled = true;
-                Background1.GetComponent<SpriteRenderer>().enabled = false;
-                Background3.GetComponent<SpriteRenderer>().enabled = false;
-                PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 20);
+                
+                if (PlayerPrefs.GetInt("coins") > 20)
+                {
+                    Background2.GetComponent<SpriteRenderer>().enabled = true;
+                    Background1.GetComponent<SpriteRenderer>().enabled = false;
+                    Background3.GetComponent<SpriteRenderer>().enabled = false;
+                    PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 20);
+                }
+                else
+                {
+                    Debug.Log("You dont have enough Coins!! "); 
+                }
+
             }
             else {
-                Background2.GetComponent<SpriteRenderer>().enabled = false;
-                Background1.GetComponent<SpriteRenderer>().enabled = false;
-                Background3.GetComponent<SpriteRenderer>().enabled = true;
-                PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 20);
+
+                if (PlayerPrefs.GetInt("coins") > 20)
+                {
+                    Background2.GetComponent<SpriteRenderer>().enabled = false;
+                    Background1.GetComponent<SpriteRenderer>().enabled = false;
+                    Background3.GetComponent<SpriteRenderer>().enabled = true;
+                    PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 20);
+                }
+                else
+                {
+                    Debug.Log("You dont have enough Coins!! ");
+                }
             }
         }
 
