@@ -24,7 +24,7 @@ public class Camera : MonoBehaviour
                     Background2.GetComponent<SpriteRenderer>().enabled = true;
                     Background1.GetComponent<SpriteRenderer>().enabled = false;
                     Background3.GetComponent<SpriteRenderer>().enabled = false;
-                    PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 20);
+                    
                 }
                 else
                 {
@@ -39,13 +39,18 @@ public class Camera : MonoBehaviour
                     Background2.GetComponent<SpriteRenderer>().enabled = false;
                     Background1.GetComponent<SpriteRenderer>().enabled = false;
                     Background3.GetComponent<SpriteRenderer>().enabled = true;
-                    PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 20);
                 }
                 else
                 {
                     Debug.Log("You dont have enough Coins!! ");
                 }
             }
+        }
+        else
+        {
+            Background2.GetComponent<SpriteRenderer>().enabled = false;
+            Background1.GetComponent<SpriteRenderer>().enabled = false;
+            Background3.GetComponent<SpriteRenderer>().enabled = false;
         }
 
 

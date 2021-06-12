@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("coins"))
         {
-            PlayerPrefs.SetInt("coins", 0);
+            PlayerPrefs.SetInt("coins", 1000);
         }
         gameOver = false;
         body = GetComponent<Rigidbody2D>();
