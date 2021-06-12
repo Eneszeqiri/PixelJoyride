@@ -41,8 +41,10 @@ public class PauseScript : MonoBehaviour
 
     public void loadMenu()
     {
+
         paused = false;
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1f;
+        
     }
 }
