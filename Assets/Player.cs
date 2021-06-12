@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -9,11 +10,14 @@ public class Player : MonoBehaviour
     public bool gameOver = false;
     public int Coins = 0;
     float score = 0;
+    public Text txt;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
+        gameOver = false;
         body = GetComponent<Rigidbody2D>();
         body.constraints = RigidbodyConstraints2D.None;
         body.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -22,16 +26,24 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        score = Time.realtimeSinceStartup * 3 + 12;
+        if(!gameOver)
+        {
+            score = (int) Time.realtimeSinceStartup * 3 + 12;
+            txt.text = score.ToString();
+        }
+        else
+            score = 0;
     }
     void FixedUpdate()
     {
         if (gameOver)
         {
+            
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("Clicked");
                 SceneManager.LoadScene("SampleScene");
+                
             }
             return;
         }
@@ -71,6 +83,7 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "Death")
         {
             gameOver = true;
+            
             body.isKinematic = true;
             body.constraints = RigidbodyConstraints2D.FreezeAll;
             Debug.Log((int)score);
