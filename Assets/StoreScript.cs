@@ -17,14 +17,27 @@ public class StoreScript : MonoBehaviour
 
     // Update is called once per frame
     public void Buy1() {
-        PlayerPrefs.SetInt("ChosenScene",1);
-        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 20);
+        if(PlayerPrefs.GetInt("coins") >= 20)
+        {
+            PlayerPrefs.SetInt("ChosenScene", 1);
+            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 20);
+        } else
+        {
+            Debug.Log("You dont have enough money");
+        }
     }
 
     public void Buy2()
     {
-        PlayerPrefs.SetInt("ChosenScene", 2);
-        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 20);
+        if (PlayerPrefs.GetInt("coins") >= 20)
+        {
+            PlayerPrefs.SetInt("ChosenScene", 2);
+            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 20);
+        }
+        else
+        {
+            Debug.Log("You dont have enough money");
+        }
 
     }
     void Update()

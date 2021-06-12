@@ -21,8 +21,8 @@ public class Camera : MonoBehaviour
                 
                 if (PlayerPrefs.GetInt("coins") > 20)
                 {
-                    Background2.GetComponent<SpriteRenderer>().enabled = true;
-                    Background1.GetComponent<SpriteRenderer>().enabled = false;
+                    Background2.GetComponent<SpriteRenderer>().enabled = false;
+                    Background1.GetComponent<SpriteRenderer>().enabled = true;
                     Background3.GetComponent<SpriteRenderer>().enabled = false;
                     
                 }
