@@ -45,8 +45,5 @@ public class MenuScripts : MonoBehaviour
         SceneManager.LoadScene("Store");
     }
 
-    public void back()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
+    
 }
