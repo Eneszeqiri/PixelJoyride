@@ -8,14 +8,17 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D body;
     public bool gameOver = false;
-    public int Coins = 0;
     float score = 0;
     public Text txt;
 
 
     // Start is called before the first frame update
     void Start()
-    { 
+    {
+        if (!PlayerPrefs.HasKey("coins"))
+        {
+            PlayerPrefs.SetInt("coins", 0);
+        }
         gameOver = false;
         body = GetComponent<Rigidbody2D>();
         body.constraints = RigidbodyConstraints2D.None;
@@ -80,8 +83,9 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Collectible")
         {
             collision.gameObject.transform.position = new Vector2(100, 100);
-            Coins++;
-            Debug.Log(Coins);
+            
+            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins")+1);
+            Debug.Log(PlayerPrefs.GetInt("coins"));
         }
     }
 
@@ -90,6 +94,14 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "Death")
         {
+            if (!PlayerPrefs.HasKey("highscore")) {
+                PlayerPrefs.SetFloat("highscore", score);
+                
+            }
+            if(PlayerPrefs.GetFloat("highscore") < score)
+            {
+                PlayerPrefs.SetFloat("highscore", score);
+            }
             gameOver = true;
             score = 0;
             body.isKinematic = true;
