@@ -15,12 +15,12 @@ public class Player : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        score = 0;
+    { 
         gameOver = false;
         body = GetComponent<Rigidbody2D>();
         body.constraints = RigidbodyConstraints2D.None;
         body.constraints = RigidbodyConstraints2D.FreezeRotation;
+        
     }
 
     // Update is called once per frame
@@ -28,11 +28,19 @@ public class Player : MonoBehaviour
     {
         if(!gameOver)
         {
-            score = (int) Time.realtimeSinceStartup * 3 + 12;
-            txt.text = score.ToString();
+            score += Time.deltaTime;
+            txt.text = "score:" + (int)score;
         }
         else
+        {
+            txt.text = "score:" + 0;
             score = 0;
+        }
+        if (body.transform.position.x == -7 && body.transform.position.y == -1)
+        {
+            score = 0;
+        }
+
     }
     void FixedUpdate()
     {
@@ -83,12 +91,11 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "Death")
         {
             gameOver = true;
-            
+            score = 0;
             body.isKinematic = true;
             body.constraints = RigidbodyConstraints2D.FreezeAll;
             Debug.Log((int)score);
         }
-
     }
 
 }
