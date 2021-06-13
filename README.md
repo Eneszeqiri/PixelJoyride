@@ -6,15 +6,21 @@ Me Enes Zeqiri(191518) and my Collegue Altin Axhami (191501) used Unity because 
 And all the art and sprites and everything in it is original ours besides the idea that we took from jetpack joyride.
 
 At first we start the game in main menu with 3 buttons: "Play", which leads us directly to the game, "Store" which leads us to the store, and the "Quit" which will close the game in a click.
+
 ![MainMenu](https://user-images.githubusercontent.com/29408754/121800905-b27f8780-cc34-11eb-82f8-ecbb6105d7b6.png)
 
 The game is played that the ingame player has got gravity, and rockets coming at him and some coins that he can take to buy Backgrounds for the game.
 The ingame player has got a jetpack that the one playing the game can control with the "Space" button which the ingame player can ONLY fly up and the gravity will bring him down, and has to calculate the gravity if the ingame player will be fast enough to avoid the rockets coming. Also the player has can use "A" and "D" to move left and right.
+
 ![GamePlay](https://user-images.githubusercontent.com/29408754/121800800-266d6000-cc34-11eb-9d05-ede27180b65c.jpg)
+
 After We can get 20 Coins, we can access the Store in the main menu, and choose the background that we want, and after the background is bought we lose 20coins;
+
 ![StoreImage](https://user-images.githubusercontent.com/29408754/121800873-86fc9d00-cc34-11eb-9572-8da0488bd3ee.png)
+
 Then when we Play the game again we see the background change. 
 In-game if we want to pause the game we can press "Esc", and then we can choose if we want to resume or go back to main menu.
+
 ![PauseMenu](https://user-images.githubusercontent.com/29408754/121800841-62a0c080-cc34-11eb-8195-ac0aeda08540.png)
 
 Under this is the code for generating the map and instructions of how the code for generating map works.
