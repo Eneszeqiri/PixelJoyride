@@ -8,7 +8,8 @@ public class StoreScript : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Buyfirst;
     public GameObject BuySecond;
-    public int flag = 0;
+    public int flagbtn1 = 0;
+    public int flagbtn2 = 0;
 
     void Start()
     {
@@ -20,7 +21,12 @@ public class StoreScript : MonoBehaviour
         if(PlayerPrefs.GetInt("coins") >= 20)
         {
             PlayerPrefs.SetInt("ChosenScene", 1);
-            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 20);
+            if(flagbtn1 == 0)
+            {
+                PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 20);
+                flagbtn1 = 1;
+            }
+            
         } else
         {
             Debug.Log("You dont have enough money");
@@ -32,7 +38,11 @@ public class StoreScript : MonoBehaviour
         if (PlayerPrefs.GetInt("coins") >= 20)
         {
             PlayerPrefs.SetInt("ChosenScene", 2);
-            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 20);
+            if (flagbtn2 == 0)
+            {
+                PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 20);
+                flagbtn2 = 1;
+            }
         }
         else
         {
