@@ -9,7 +9,6 @@ public class Camera : MonoBehaviour
     public GameObject Background1;
     public GameObject Background2;
     public GameObject Background3;
-    StoreScript st = new StoreScript();
 
 
     void Start()

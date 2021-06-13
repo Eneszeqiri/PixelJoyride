@@ -87,16 +87,16 @@ public class MapGenerator : MonoBehaviour
     void Update()
     {
         //Generating map
-        if (Player.transform.position.x > Floor.transform.position.x)
+        if (Player.transform.position.x > Floor.transform.position.x)//if the position of the player passes the middle of the "floor"
         {
-            var tempCeiling = PrevCeiling;
-            var tempFloor = PrevFloor;
-            PrevCeiling = Ceiling;
-            PrevFloor = Floor;
-            PrevCeiling.transform.position += new Vector3(40, 0, 0);
-            PrevFloor.transform.position += new Vector3(40, 0, 0);
-            Ceiling = tempCeiling;
-            Floor = tempFloor;
+            var tempCeiling = PrevCeiling; // we put the previous ceiling in a temporary variable
+            var tempFloor = PrevFloor; // same as the temporary floor,
+            PrevCeiling = Ceiling; // because we will put the "Ceiling" in the previous ceiling,
+            PrevFloor = Floor; // And the floor in the previous floor
+            PrevCeiling.transform.position += new Vector3(40, 0, 0); //and we will move the ceiling and
+            PrevFloor.transform.position += new Vector3(40, 0, 0); // the floor +40 in the x-axis to generate the new field for walking;
+            Ceiling = tempCeiling; //then we put the original previous-ceiling in the first-ceiling
+            Floor = tempFloor; // and the same with the floors
         }
 
         //generating Rockets
