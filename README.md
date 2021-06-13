@@ -19,7 +19,7 @@ In-game if we want to pause the game we can press "Esc", and then we can choose 
 
 Under this is the code for generating the map and instructions of how the code works.
 
-if (Player.transform.position.x > Floor.transform.position.x)         //if the position of the player passes the middle of the "floor"
+'if (Player.transform.position.x > Floor.transform.position.x)         //if the position of the player passes the middle of the "floor"
         {
             var tempCeiling = PrevCeiling;                            // we put the previous ceiling in a temporary variable
             var tempFloor = PrevFloor;                                // same as the temporary floor,
@@ -29,7 +29,7 @@ if (Player.transform.position.x > Floor.transform.position.x)         //if the p
             PrevFloor.transform.position += new Vector3(40, 0, 0);    // the floor +40 in the x-axis to generate the new field for walking;
             Ceiling = tempCeiling;                                    //then we put the original previous-ceiling in the first-ceiling
             Floor = tempFloor;                                        // and the same with the floors
-        }
+        }'
 
 
 
