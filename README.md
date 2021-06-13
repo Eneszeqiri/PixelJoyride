@@ -17,7 +17,7 @@ Then when we Play the game again we see the background change.
 In-game if we want to pause the game we can press "Esc", and then we can choose if we want to resume or go back to main menu.
 ![PauseMenu](https://user-images.githubusercontent.com/29408754/121800841-62a0c080-cc34-11eb-8195-ac0aeda08540.png)
 
-Under this is the code for generating the map and instructions of how the code works.
+Under this is the code for generating the map and instructions of how the code for generating map works.
 
 ```
 if (Player.transform.position.x > Floor.transform.position.x)         //if the position of the player passes the middle of the "floor"
